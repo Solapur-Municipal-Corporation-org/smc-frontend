@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-manrope: 'Manrope', sans-serif;
+  --font-tiro-marathi: 'Tiro Devanagari Marathi', serif;
+}
+
+/* Citizen Portal design tokens (shadcn-style HSL variables) */
+@layer base {
+  :root {
+    --background: 293 36% 97%;
+    --foreground: 279 30% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 279 30% 14%;
+    --primary: 292 49% 25%;
+    --primary-foreground: 293 36% 97%;
+    --accent: 324 35% 50%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 289 35% 94%;
+    --muted-foreground: 284 15% 42%;
+    --border: 284 25% 88%;
+    --input: 284 25% 88%;
+    --ring: 303 39% 34%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --radius: 0.75rem;
+  }
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+::selection {
+  @apply bg-brand-light/30;
+}
+
+/* Citizen Portal utilities */
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: hsl(var(--muted-foreground) / .35); border-radius: 999px; }
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72));
+  backdrop-filter: blur(14px);
+}
+
+/* Department Portal (ported) — plain CSS classes matching the original package's className
+   usage (`brand-gradient`, not Tailwind's `bg-brand-gradient` utility already defined above;
+   both resolve to the same colors, kept as two names to avoid rewriting every ported file). */
+.font-marathi {
+  font-family: var(--font-tiro-marathi);
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, #AC5288 0%, #3C1053 100%);
+}
+
+.brand-gradient-text {
+  background: linear-gradient(90deg, #AC5288 0%, #3C1053 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
