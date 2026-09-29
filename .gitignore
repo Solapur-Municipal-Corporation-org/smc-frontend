@@ -27,3 +27,13 @@ pnpm-debug.log*
 Thumbs.db
 .idea/
 .vscode/
+
+node_modules/
+.next/
+.next-citizen/
+.next-department/
+out/
+dist/
+.env
+.env.local
+.env.*.local
