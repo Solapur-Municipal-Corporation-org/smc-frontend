@@ -111,6 +111,12 @@ export function Sidebar({ open, onClose }: { open: boolean; onClose: () => void 
           );
         })}
       </div>
+      <div className="my-3 h-px bg-white/10" />
+      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-wider text-white/45">भूमी व मालमत्ता</p>
+      <div className="space-y-1">
+        <Link href="/citizen/bhoomi-malmatta/demand-application" onClick={onClose} className={cn("block rounded-lg px-3 py-2.5 text-sm text-white/85 hover:bg-white/10", pathname === "/citizen/bhoomi-malmatta/demand-application" && "bg-white/15 text-white")}>मागणी अर्ज</Link>
+        <Link href="/citizen/bhoomi-malmatta/application-status" onClick={onClose} className={cn("block rounded-lg px-3 py-2.5 text-sm text-white/85 hover:bg-white/10", pathname === "/citizen/bhoomi-malmatta/application-status" && "bg-white/15 text-white")}>अर्जाची स्थिती तपासा</Link>
+      </div>
     </nav>
   );
 
