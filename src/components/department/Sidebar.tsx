@@ -109,6 +109,16 @@ export default function Sidebar({ deptName, isOpen, onClose }: SidebarProps) {
               </div>
             );
           })}
+          <div className="mb-1 mt-3 border-t border-gray-200 pt-3">
+            <p className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">Bhoomi Malmatta</p>
+            <div className="ml-6 space-y-0.5">
+              {[["", "Overview"], ["dashboard", "Dashboard"], ["malmatta", "Malmatta"], ["hastantaran", "Hastantaran"], ["calculation", "Calculation"], ["vasuli", "Vasuli"], ["audit", "Audit"], ["ahwal", "Ahwal / Reports"], ["karyapaddhati", "Karyapaddhati"], ["upkram", "Upkram"], ["master-data", "Master Data"], ["users", "Users"], ["demand-application/officer", "Demand Application Workflow"]].map(([route, label]) => {
+                const href = route ? "/department/bhoomi-malmatta/" + route : "/department/bhoomi-malmatta";
+                const active = pathname === href;
+                return <Link key={route || "overview"} href={href} onClick={onClose} className={"block rounded-lg px-3 py-2 text-sm transition-colors " + (active ? "bg-[#AC5288]/10 font-medium text-[#3C1053]" : "text-gray-600 hover:bg-gray-50 hover:text-gray-900")}>{label}</Link>;
+              })}
+            </div>
+          </div>
         </nav>
       </aside>
     </>
